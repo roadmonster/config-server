@@ -8,15 +8,23 @@ eureka:
     hostname: localhost
 
 microservice:
-  payment-server:
+  payment-service:
     endpoints:
       endpoint:
         uri: http://PAYMENT-SERVICE/payment/doPayments
-  order-server:
+  order-service:
     endpoints:
       endpoint:
-        uri: http://ORDER-SERVICE/order/orderbooks
-  inventory-server:
+        uri: http://ORDER-SERVICE/order/orderParts
+  inventory-check-service:
     endpoints:
       endpoint:
-        uri: http://INVENTORY-SERVICE/inventory/placeOrder
+        uri: http://INVENTORY-SERVICE/inventory
+  inventory-deletion-service:
+    endpoints:
+      endpoint:
+        uri: http://INVENTORY-SERVICE/inventory/deletion
+  inventory-update-service:
+    endpoints:
+      endpoint:
+        uri: http://INVENTORY-SERVICE/inventory/update
